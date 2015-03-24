@@ -1,18 +1,58 @@
 ﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <title>@ViewBag.Title - Doukala</title>
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   
+    <style type="text/css">
+
+    </style>
+    @Styles.Render("~/Assets/bootstrap")
+    @Styles.Render("~/Assets/app")
 </head>
 <body>
+    <div class="doukala">
+        <header class="navbar doukala-header">
+            <div class="container">
+                <a class="navbar-brand logo-brand" href="@Url.Action("Index", "Home")">
+                    <img src="" alt="" />
+                    <img src="" alt="" />
+                    <img src="" alt="" />
+                </a>    Doukala
+                <div class="clearfix">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
 
-    <div class="container">
-        @RenderBody()
-    </div>
+                    <div class="navbar navbar-left pull-left">
+                        <ul class="nav nav-pills">
+                            <li>
+                                <a class="btn btn-block" href="@Url.Action("About", "Home")">About</a>
+                            </li>
+                        </ul>
 
+                    </div>
+                    <div class="navbar navbar-left pull-right">
+                        <!---    Todo Login Here            -->  
+                        <ul class="nav nav-pills">
+                            <li><a href="">Login</a></li>  
+                            <li><a href="">Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="container">
+            @RenderBody()
+        </div>
+    </div> 
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("Scripts", required: false)
 </body>
 </html>
