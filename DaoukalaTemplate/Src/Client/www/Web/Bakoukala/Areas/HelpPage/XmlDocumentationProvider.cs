@@ -5,9 +5,9 @@ using System.Reflection;
 using System.Web.Http.Controllers;
 using System.Web.Http.Description;
 using System.Xml.XPath;
-using Bakoukala.Areas.HelpPage.ModelDescriptions;
+using Doukala.Areas.HelpPage.ModelDescriptions;
 
-namespace Bakoukala.Areas.HelpPage
+namespace Doukala.Areas.HelpPage
 {
     /// <summary>
     /// A custom <see cref="IDocumentationProvider"/> that reads the API documentation from an XML documentation file.

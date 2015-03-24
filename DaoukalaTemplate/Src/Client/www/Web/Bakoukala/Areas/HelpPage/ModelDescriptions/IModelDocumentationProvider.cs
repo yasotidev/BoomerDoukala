@@ -1,7 +1,7 @@
 using System;
 using System.Reflection;
 
-namespace Bakoukala.Areas.HelpPage.ModelDescriptions
+namespace Doukala.Areas.HelpPage.ModelDescriptions
 {
     public interface IModelDocumentationProvider
     {

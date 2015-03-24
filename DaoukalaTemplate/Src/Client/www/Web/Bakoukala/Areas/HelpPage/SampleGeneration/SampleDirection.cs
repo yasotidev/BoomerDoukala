@@ -1,4 +1,4 @@
-namespace Bakoukala.Areas.HelpPage
+namespace Doukala.Areas.HelpPage.SampleGeneration
 {
     /// <summary>
     /// Indicates whether the sample is used for request or response

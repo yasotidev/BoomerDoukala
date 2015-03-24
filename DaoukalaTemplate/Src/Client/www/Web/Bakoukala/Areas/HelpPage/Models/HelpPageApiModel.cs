@@ -2,9 +2,9 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Net.Http.Headers;
 using System.Web.Http.Description;
-using Bakoukala.Areas.HelpPage.ModelDescriptions;
+using Doukala.Areas.HelpPage.ModelDescriptions;
 
-namespace Bakoukala.Areas.HelpPage.Models
+namespace Doukala.Areas.HelpPage.Models
 {
     /// <summary>
     /// The model that represents an API displayed on the help page.

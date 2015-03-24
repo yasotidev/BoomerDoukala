@@ -1,5 +1,6 @@
 using System.Web.Http;
 using System.Web.Mvc;
+using Doukala.Areas.HelpPage.App_Start;
 
 namespace Bakoukala.Areas.HelpPage
 {

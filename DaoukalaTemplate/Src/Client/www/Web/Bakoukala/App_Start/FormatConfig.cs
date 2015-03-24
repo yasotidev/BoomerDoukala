@@ -4,7 +4,7 @@ using System.Web.Http;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 
-namespace Bakoukala
+namespace Doukala
 {
     public class FormatConfig
     {

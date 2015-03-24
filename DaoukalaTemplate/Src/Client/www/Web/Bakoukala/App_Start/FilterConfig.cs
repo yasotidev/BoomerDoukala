@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace Bakoukala
+namespace Doukala
 {
     public class FilterConfig
     {

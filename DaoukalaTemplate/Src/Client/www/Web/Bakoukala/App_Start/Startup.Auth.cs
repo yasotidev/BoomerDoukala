@@ -1,6 +1,6 @@
 ﻿using Owin;
 
-namespace Bakoukala
+namespace Doukala
 {
     public partial class Startup
     {

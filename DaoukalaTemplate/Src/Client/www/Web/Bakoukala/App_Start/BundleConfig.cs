@@ -1,6 +1,6 @@
 ﻿using System.Web.Optimization;
 
-namespace Bakoukala
+namespace Doukala
 {
     public class BundleConfig
     {

@@ -1,9 +1,9 @@
 ﻿using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartup(typeof(Bakoukala.Startup))]
+[assembly: OwinStartup(typeof(Doukala.Startup))]
 
-namespace Bakoukala
+namespace Doukala
 {
     public partial class Startup
     {

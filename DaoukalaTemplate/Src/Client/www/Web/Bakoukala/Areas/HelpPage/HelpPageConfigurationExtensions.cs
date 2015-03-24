@@ -11,10 +11,11 @@ using System.Net.Http.Headers;
 using System.Web.Http;
 using System.Web.Http.Controllers;
 using System.Web.Http.Description;
-using Bakoukala.Areas.HelpPage.ModelDescriptions;
-using Bakoukala.Areas.HelpPage.Models;
+using Doukala.Areas.HelpPage.ModelDescriptions;
+using Doukala.Areas.HelpPage.Models;
+using Doukala.Areas.HelpPage.SampleGeneration;
 
-namespace Bakoukala.Areas.HelpPage
+namespace Doukala.Areas.HelpPage
 {
     public static class HelpPageConfigurationExtensions
     {

@@ -8,8 +8,10 @@ using System.Web.Http;
 #if Handle_PageResultOfT
 using System.Web.Http.OData;
 #endif
+using Bakoukala.Areas.HelpPage;
+using Doukala.Areas.HelpPage.SampleGeneration;
 
-namespace Bakoukala.Areas.HelpPage
+namespace Doukala.Areas.HelpPage.App_Start
 {
     /// <summary>
     /// Use this class to customize the Help Page.

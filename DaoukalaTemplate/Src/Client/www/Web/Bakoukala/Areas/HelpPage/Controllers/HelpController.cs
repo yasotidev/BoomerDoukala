@@ -1,10 +1,11 @@
 using System;
 using System.Web.Http;
 using System.Web.Mvc;
-using Bakoukala.Areas.HelpPage.ModelDescriptions;
-using Bakoukala.Areas.HelpPage.Models;
+using Bakoukala.Areas.HelpPage;
+using Doukala.Areas.HelpPage.ModelDescriptions;
+using Doukala.Areas.HelpPage.Models;
 
-namespace Bakoukala.Areas.HelpPage.Controllers
+namespace Doukala.Areas.HelpPage.Controllers
 {
     /// <summary>
     /// The controller that will handle requests for the help page.

@@ -1,6 +1,6 @@
 using System;
 
-namespace Bakoukala.Areas.HelpPage.ModelDescriptions
+namespace Doukala.Areas.HelpPage.ModelDescriptions
 {
     /// <summary>
     /// Describes a type model.

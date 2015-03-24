@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Bakoukala.Models
+namespace Doukala.Models
 {
     public class Manager
     {

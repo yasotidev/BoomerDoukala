@@ -1,6 +1,6 @@
 using System.Collections.ObjectModel;
 
-namespace Bakoukala.Areas.HelpPage.ModelDescriptions
+namespace Doukala.Areas.HelpPage.ModelDescriptions
 {
     public class EnumTypeModelDescription : ModelDescription
     {

@@ -1,4 +1,4 @@
-﻿namespace Bakoukala.Models
+﻿namespace Doukala.Models
 {
     public class Compagny
     {

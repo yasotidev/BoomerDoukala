@@ -1,6 +1,6 @@
 using System;
 
-namespace Bakoukala.Areas.HelpPage.ModelDescriptions
+namespace Doukala.Areas.HelpPage.ModelDescriptions
 {
     public class ParameterAnnotation
     {

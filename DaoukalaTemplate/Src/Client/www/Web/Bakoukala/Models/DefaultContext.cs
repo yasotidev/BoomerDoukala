@@ -1,6 +1,6 @@
 ﻿using System.Data.Entity;
 
-namespace Bakoukala.Models
+namespace Doukala.Models
 {
     public class DefaultContext : DataContext<DefaultContext>
     {

@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 
-namespace Bakoukala
+namespace Doukala
 {
     public class EmailService : IIdentityMessageService
     {

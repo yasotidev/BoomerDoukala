@@ -1,6 +1,6 @@
 ﻿using System.Data.Entity.Spatial;
 
-namespace Bakoukala.Models
+namespace Doukala.Models
 {
     public class Address
     {

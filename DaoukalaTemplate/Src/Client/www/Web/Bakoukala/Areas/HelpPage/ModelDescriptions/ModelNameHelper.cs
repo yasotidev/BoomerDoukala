@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Linq;
 using System.Reflection;
 
-namespace Bakoukala.Areas.HelpPage.ModelDescriptions
+namespace Doukala.Areas.HelpPage.ModelDescriptions
 {
     internal static class ModelNameHelper
     {

@@ -1,7 +1,7 @@
 ﻿using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 
-namespace Bakoukala.Models
+namespace Doukala.Models
 {
     public class DataContext<TContext> : DbContext where TContext : DbContext
     {

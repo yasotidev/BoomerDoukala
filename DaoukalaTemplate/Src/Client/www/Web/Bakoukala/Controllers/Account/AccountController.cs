@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace Bakoukala.Controllers.Account
+namespace Doukala.Controllers.Account
 {
     public class AccountController : Controller
     {

@@ -1,4 +1,4 @@
-namespace Bakoukala.Areas.HelpPage.ModelDescriptions
+namespace Doukala.Areas.HelpPage.ModelDescriptions
 {
     public class EnumValueDescription
     {
