@@ -1,6 +1,6 @@
 ﻿namespace Doukala.Models
 {
-    public class Compagny
+    public class Compagny : DomainObject
     {
         public byte[] LogoAvatar { get; set; }
         public string Logo { get; set; }

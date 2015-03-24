@@ -215,6 +215,7 @@
     <Compile Include="Models\Compagny.cs" />
     <Compile Include="Models\DataContext.cs" />
     <Compile Include="Models\DefaultContext.cs" />
+    <Compile Include="Models\DomaineObject.cs" />
     <Compile Include="Models\Gender.cs" />
     <Compile Include="Models\Manager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

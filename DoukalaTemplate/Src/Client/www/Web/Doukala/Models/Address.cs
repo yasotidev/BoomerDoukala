@@ -2,7 +2,7 @@
 
 namespace Doukala.Models
 {
-    public class Address
+    public class Address 
     {
         public string Street { get; set; }
         public string Option { get; set; }
