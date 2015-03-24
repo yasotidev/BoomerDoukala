@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace Bakoukala.Controllers
+namespace Bakoukala.Controllers.Home
 {
    
     public class HomeController : Controller
