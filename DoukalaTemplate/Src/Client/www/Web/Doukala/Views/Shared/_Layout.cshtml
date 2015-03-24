@@ -7,9 +7,9 @@
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style type="text/css">
-
     </style>
     @Styles.Render("~/Assets/bootstrap")
+    @Styles.Render("~/Assets/awesome")
     @Styles.Render("~/Assets/app")
 </head>
 <body>
@@ -37,9 +37,9 @@
 
                     </div>
                     <div class="navbar navbar-left pull-right">
-                        <!---    Todo Login Here            -->  
+                        <!---    Todo Login Here            -->
                         <ul class="nav nav-pills">
-                            <li><a href="">Login</a></li>  
+                            <li><a href="">Login</a></li>
                             <li><a href="">Logout</a></li>
                         </ul>
                     </div>
@@ -49,7 +49,24 @@
         <div class="container">
             @RenderBody()
         </div>
-    </div> 
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div class="col-lg-5">
+                            Powered by YASOTI-DEV Team
+                        </div>
+                        <div class="col-lg-2">
+
+                        </div>
+                        <div class="col-lg-5">
+                            <p>&copy; @DateTime.Now.Year - Doukala MVC Version 1.0</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")

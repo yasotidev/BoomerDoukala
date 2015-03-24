@@ -25,7 +25,10 @@ namespace Doukala
                   "~/Assets/css/themes/bootstrap/*.css"));
 
             bundles.Add(new StyleBundle("~/Assets/app").Include(
-                 "~/Assets/css/themes/doukala/*.css")); 
+                 "~/Assets/css/themes/doukala/*.css"));   
+            
+            bundles.Add(new StyleBundle("~/Assets/awesome").Include(
+                 "~/Assets/css/themes/awesome/*.css")); 
         }
     }
 }
