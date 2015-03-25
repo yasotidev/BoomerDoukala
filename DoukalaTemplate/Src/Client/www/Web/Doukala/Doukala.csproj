@@ -335,6 +335,7 @@
     <Content Include="Views\Compagnies\Details.cshtml" />
     <Content Include="Views\Compagnies\Edit.cshtml" />
     <Content Include="Views\Compagnies\Index.cshtml" />
+    <Content Include="Views\Compagnies\Search.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -344,6 +345,7 @@
     <Folder Include="Assets\Images\png\" />
     <Folder Include="Assets\Images\users\" />
     <Folder Include="Models\" />
+    <Folder Include="ViewModels\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

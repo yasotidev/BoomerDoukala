@@ -178,6 +178,16 @@ namespace Doukala.Controllers
 
         #endregion
 
+        #region Search
+
+        public ActionResult Search()
+        {
+            return View();
+        }
+
+        #endregion
+
+
         #endregion
 
 
