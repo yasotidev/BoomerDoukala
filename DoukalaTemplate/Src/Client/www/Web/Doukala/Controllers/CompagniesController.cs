@@ -7,8 +7,15 @@ namespace Doukala.Controllers
 {
     public class CompagniesController : Controller
     {
-        
+
+        #region Members
+
         protected ICompagnyService CompagnyService;
+
+        #endregion
+
+
+        #region Contructor
 
         public CompagniesController()
             : this(new CompagnyService())
@@ -18,17 +25,29 @@ namespace Doukala.Controllers
 
         //public CompagniesController()
         //{
-            
+
         //}
         public CompagniesController(ICompagnyService service)
         {
             CompagnyService = service;
         }
+
+        #endregion
+
+        #region Metods
+
+        #region  // GET: Compagnies
+
         // GET: Compagnies
         public ActionResult Index()
         {
             return View(CompagnyService.GetAll());
         }
+
+        #endregion
+
+
+        #region    // GET: Compagnies/Details/5
 
         // GET: Compagnies/Details/5
         public ActionResult Details(int? id)
@@ -39,13 +58,18 @@ namespace Doukala.Controllers
             }
 
 
-            Compagny compagny = CompagnyService.GetById(id); 
+            Compagny compagny = CompagnyService.GetById(id);
             if (compagny == null)
             {
                 return HttpNotFound();
             }
             return View(compagny);
         }
+
+        #endregion
+
+
+        #region   // GET: Compagnies/Create
 
         // GET: Compagnies/Create
         public ActionResult Create()
@@ -58,19 +82,28 @@ namespace Doukala.Controllers
         // plus de détails, voir  http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,LogoAvatar,Logo,Nom,Description,Address,Activity,CodeNaf,SiretNumber,IntraCommunityVat,Email,WebSite,Manager,CreatedDate,ModifiedDate,RowVersion")] Compagny compagny)
+        public ActionResult Create(
+            [Bind(
+                Include =
+                    "Id,LogoAvatar,Logo,Nom,Description,Address,Activity,CodeNaf,SiretNumber,IntraCommunityVat,Email,WebSite,Manager,CreatedDate,ModifiedDate,RowVersion"
+                )] Compagny compagny)
         {
             if (ModelState.IsValid)
             {
                 CompagnyService.Create(compagny);
                 CompagnyService.SaveOrUpdate();
-                
-               
+
+
                 return RedirectToAction("Index");
             }
 
             return View(compagny);
         }
+
+        #endregion
+
+
+        #region   // GET: Compagnies/Edit/5
 
         // GET: Compagnies/Edit/5
         public ActionResult Edit(int? id)
@@ -92,18 +125,27 @@ namespace Doukala.Controllers
         // plus de détails, voir  http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,LogoAvatar,Logo,Nom,Description,Address,Activity,CodeNaf,SiretNumber,IntraCommunityVat,Email,WebSite,Manager,CreatedDate,ModifiedDate,RowVersion")] Compagny compagny)
+        public ActionResult Edit(
+            [Bind(
+                Include =
+                    "Id,LogoAvatar,Logo,Nom,Description,Address,Activity,CodeNaf,SiretNumber,IntraCommunityVat,Email,WebSite,Manager,CreatedDate,ModifiedDate,RowVersion"
+                )] Compagny compagny)
         {
             Compagny entityCompagny = CompagnyService.GetById(compagny.Id);
             if (ModelState.IsValid)
             {
                 UpdateModel(entityCompagny);
                 CompagnyService.SaveOrUpdate();
-                
+
                 return RedirectToAction("Index");
             }
             return View(compagny);
         }
+
+        #endregion
+
+
+        #region  // GET: Compagnies/Delete/5
 
         // GET: Compagnies/Delete/5
         public ActionResult Delete(int? id)
@@ -130,8 +172,14 @@ namespace Doukala.Controllers
 
             CompagnyService.Remove(compagny);
             CompagnyService.SaveOrUpdate();
-           
+
             return RedirectToAction("Index");
         }
+
+        #endregion
+
+        #endregion
+
+
     }
 }
