@@ -1,29 +1,29 @@
-﻿using System.Data.Entity;
-using System.Linq;
-using System.Net;
-using System.Threading;
+﻿using System.Net;
 using System.Web.Mvc;
 using Doukala.Models;
+using Doukala.Services;
 
 namespace Doukala.Controllers
 {
     public class CompagniesController : Controller
     {
-        private DefaultContext context = new DefaultContext();
+        
+        protected CompagnyService CompagnyService;
 
-        public CompagniesController():this(new DefaultContext())
+        public CompagniesController()
+            :this(new CompagnyService())
         {
             
         }
 
-        public CompagniesController(DefaultContext context)
+        public CompagniesController(CompagnyService service)
         {
-           context = context
+            CompagnyService = service;
         }
         // GET: Compagnies
         public ActionResult Index()
         {
-            return View(context.Compagnies.ToList());
+            return View(CompagnyService.GetAll());
         }
 
         // GET: Compagnies/Details/5
@@ -33,7 +33,9 @@ namespace Doukala.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Compagny compagny = context.Compagnies.Find(id);
+
+
+            Compagny compagny = CompagnyService.GetById(id); 
             if (compagny == null)
             {
                 return HttpNotFound();
@@ -56,8 +58,10 @@ namespace Doukala.Controllers
         {
             if (ModelState.IsValid)
             {
-                context.Compagnies.Add(compagny);
-                context.SaveChanges();
+                CompagnyService.Create(compagny);
+                CompagnyService.SaveOrUpdate();
+                
+               
                 return RedirectToAction("Index");
             }
 
@@ -71,7 +75,7 @@ namespace Doukala.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Compagny compagny = context.Compagnies.Find(id);
+            Compagny compagny = CompagnyService.GetById(id);
             if (compagny == null)
             {
                 return HttpNotFound();
@@ -86,10 +90,12 @@ namespace Doukala.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,LogoAvatar,Logo,Nom,Description,Address,Activity,CodeNaf,SiretNumber,IntraCommunityVat,Email,WebSite,Manager,CreatedDate,ModifiedDate,RowVersion")] Compagny compagny)
         {
+            Compagny entityCompagny = CompagnyService.GetById(compagny.Id);
             if (ModelState.IsValid)
             {
-                context.Entry(compagny).State = EntityState.Modified;
-                context.SaveChanges();
+                UpdateModel(entityCompagny);
+                CompagnyService.SaveOrUpdate();
+                
                 return RedirectToAction("Index");
             }
             return View(compagny);
@@ -102,7 +108,7 @@ namespace Doukala.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Compagny compagny = context.Compagnies.Find(id);
+            Compagny compagny = CompagnyService.GetById(id);
             if (compagny == null)
             {
                 return HttpNotFound();
@@ -115,19 +121,13 @@ namespace Doukala.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Compagny compagny = context.Compagnies.Find(id);
-            context.Compagnies.Remove(compagny);
-            context.SaveChanges();
-            return RedirectToAction("Index");
-        }
 
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                context.Dispose();
-            }
-            base.Dispose(disposing);
+            Compagny compagny = CompagnyService.GetById(id);
+
+            CompagnyService.Remove(compagny);
+            CompagnyService.SaveOrUpdate();
+           
+            return RedirectToAction("Index");
         }
     }
 }
