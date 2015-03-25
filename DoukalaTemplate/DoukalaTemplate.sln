@@ -5,6 +5,14 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Doukala", "Src\Client\www\Web\Doukala\Doukala.csproj", "{54308562-4026-42F9-A7ED-679BFAFECE95}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Doukala.Server.Core.Data", "Src\Server\Core\Doukala.Server.Core.Data\Doukala.Server.Core.Data.csproj", "{9A3B4E75-52AB-4203-BC75-9E291BEF0860}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Doukala.Server.Core.Entities", "Src\Server\Core\Doukala.Server.Core.Entities\Doukala.Server.Core.Entities.csproj", "{36D135A3-DABC-4F4C-90E3-0CB15C203DC1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{E5934AA6-35E4-4306-B54A-EDF5630B7933}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{4F3D0BD8-A9D0-4DF5-B8E4-8EA23537ECC4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,8 +23,21 @@ Global
 		{54308562-4026-42F9-A7ED-679BFAFECE95}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{54308562-4026-42F9-A7ED-679BFAFECE95}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{54308562-4026-42F9-A7ED-679BFAFECE95}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A3B4E75-52AB-4203-BC75-9E291BEF0860}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A3B4E75-52AB-4203-BC75-9E291BEF0860}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A3B4E75-52AB-4203-BC75-9E291BEF0860}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A3B4E75-52AB-4203-BC75-9E291BEF0860}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36D135A3-DABC-4F4C-90E3-0CB15C203DC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36D135A3-DABC-4F4C-90E3-0CB15C203DC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36D135A3-DABC-4F4C-90E3-0CB15C203DC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36D135A3-DABC-4F4C-90E3-0CB15C203DC1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{54308562-4026-42F9-A7ED-679BFAFECE95} = {4F3D0BD8-A9D0-4DF5-B8E4-8EA23537ECC4}
+		{9A3B4E75-52AB-4203-BC75-9E291BEF0860} = {E5934AA6-35E4-4306-B54A-EDF5630B7933}
+		{36D135A3-DABC-4F4C-90E3-0CB15C203DC1} = {E5934AA6-35E4-4306-B54A-EDF5630B7933}
 	EndGlobalSection
 EndGlobal

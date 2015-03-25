@@ -225,21 +225,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201503242326223_FirstMigration.cs" />
-    <Compile Include="Migrations\201503242326223_FirstMigration.Designer.cs">
-      <DependentUpon>201503242326223_FirstMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\AppDataSeeder.cs" />
-    <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\Address.cs" />
-    <Compile Include="Models\Compagny.cs" />
-    <Compile Include="Models\DataContext.cs" />
-    <Compile Include="Models\DefaultContext.cs" />
-    <Compile Include="Models\DomaineObject.cs" />
-    <Compile Include="Models\Gender.cs" />
-    <Compile Include="Models\Manager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\CompagnyService.cs" />
+    <Compile Include="Services\ICompagnyService.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -355,14 +343,20 @@
     <Folder Include="Assets\Images\jpg\" />
     <Folder Include="Assets\Images\png\" />
     <Folder Include="Assets\Images\users\" />
+    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201503242326223_FirstMigration.resx">
-      <DependentUpon>201503242326223_FirstMigration.cs</DependentUpon>
-    </EmbeddedResource>
+    <ProjectReference Include="..\..\..\..\Server\Core\Doukala.Server.Core.Data\Doukala.Server.Core.Data.csproj">
+      <Project>{9A3B4E75-52AB-4203-BC75-9E291BEF0860}</Project>
+      <Name>Doukala.Server.Core.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Server\Core\Doukala.Server.Core.Entities\Doukala.Server.Core.Entities.csproj">
+      <Project>{36D135A3-DABC-4F4C-90E3-0CB15C203DC1}</Project>
+      <Name>Doukala.Server.Core.Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

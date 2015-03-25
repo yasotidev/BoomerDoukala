@@ -1,6 +1,7 @@
 ﻿using System.Data.Entity;
+using Doukala.Server.Core.Entities;
 
-namespace Doukala.Models
+namespace Doukala.Server.Core.Data
 {
     public class DefaultContext : DataContext<DefaultContext>
     {

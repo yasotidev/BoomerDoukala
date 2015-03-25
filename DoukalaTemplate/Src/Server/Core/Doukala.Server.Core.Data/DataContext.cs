@@ -2,20 +2,10 @@
 using System.Data.Entity.Core.Objects;
 using System.Data.Entity.Infrastructure;
 using System.Data.Entity.ModelConfiguration.Conventions;
+using Doukala.Server.Core.Entities;
 
-namespace Doukala.Models
+namespace Doukala.Server.Core.Data
 {
-    public interface IDataContext
-    {
-        ObjectContext ObjectContext();
-        IDbSet<T> DbSet<T>() where T : DomaineObject;
-        DbEntityEntry Entry<T>(T entity) where T : DomaineObject;
-        void Dispose();
-
-
-       
-    }
-
     public class DataContext<TContext> : DbContext, IDataContext where TContext : DbContext
     {
         static DataContext()
@@ -45,12 +35,12 @@ namespace Doukala.Models
         }
 
 
-        public virtual IDbSet<T> DbSet<T>() where T : DomaineObject
+        public virtual IDbSet<T> DbSet<T>() where T : DomainObject
         {
             return Set<T>();
         }
 
-        public new DbEntityEntry Entry<T>(T entity) where T : DomaineObject
+        public new DbEntityEntry Entry<T>(T entity) where T : DomainObject
         {
             return base.Entry(entity);
         }

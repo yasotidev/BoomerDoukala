@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using System.Data.Entity.Migrations;
-using Doukala.Models;
+using Doukala.Server.Core.Entities;
 
-namespace Doukala.Migrations
+namespace Doukala.Server.Core.Data.Seeders
 {
     public class AppDataSeeder
     {
@@ -35,7 +35,7 @@ namespace Doukala.Migrations
                         MobileNumber = "06 66 45 50 96",
                         Email = "mbroke@compagny-design.com"
                     },
-                    Address = new Address()
+                    Address = new Address
                     {
                         Street = "20 rue de la Grande Ile",
                         Option = null,

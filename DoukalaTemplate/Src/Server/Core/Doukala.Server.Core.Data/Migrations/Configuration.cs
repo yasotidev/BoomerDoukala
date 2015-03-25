@@ -1,9 +1,8 @@
-using Doukala.Models;
+using System.Data.Entity.Migrations;
+using Doukala.Server.Core.Data.Seeders;
 
-namespace Doukala.Migrations
+namespace Doukala.Server.Core.Data.Migrations
 {
-    using System.Data.Entity.Migrations;
-
     internal sealed class Configuration : DbMigrationsConfiguration<DefaultContext>
     {
         public Configuration()

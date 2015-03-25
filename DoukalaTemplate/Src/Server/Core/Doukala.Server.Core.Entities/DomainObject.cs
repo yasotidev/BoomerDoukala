@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace Doukala.Models
+namespace Doukala.Server.Core.Entities
 {
-    public class DomaineObject : IValidatableObject
+    public class DomainObject : IValidatableObject
     {
 
         public int Id { get; set; }

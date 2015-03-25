@@ -1,6 +1,6 @@
-﻿namespace Doukala.Models
+﻿namespace Doukala.Server.Core.Entities
 {
-    public class Compagny   :DomaineObject
+    public class Compagny   :DomainObject
     {
         public byte[] LogoAvatar { get; set; }
         public string Logo { get; set; }

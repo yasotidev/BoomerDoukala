@@ -1,6 +1,6 @@
 ﻿using System.Net;
 using System.Web.Mvc;
-using Doukala.Models;
+using Doukala.Server.Core.Entities;
 using Doukala.Services;
 
 namespace Doukala.Controllers

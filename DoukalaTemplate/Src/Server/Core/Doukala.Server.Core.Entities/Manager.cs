@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Doukala.Models
+namespace Doukala.Server.Core.Entities
 {
     public class Manager
     {
