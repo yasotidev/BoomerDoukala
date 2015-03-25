@@ -1,6 +1,7 @@
 ﻿using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Threading;
 using System.Web.Mvc;
 using Doukala.Models;
 
@@ -8,12 +9,21 @@ namespace Doukala.Controllers
 {
     public class CompagniesController : Controller
     {
-        private DefaultContext db = new DefaultContext();
+        private DefaultContext context = new DefaultContext();
 
+        public CompagniesController():this(new DefaultContext())
+        {
+            
+        }
+
+        public CompagniesController(DefaultContext context)
+        {
+           context = context
+        }
         // GET: Compagnies
         public ActionResult Index()
         {
-            return View(db.Compagnies.ToList());
+            return View(context.Compagnies.ToList());
         }
 
         // GET: Compagnies/Details/5
@@ -23,7 +33,7 @@ namespace Doukala.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Compagny compagny = db.Compagnies.Find(id);
+            Compagny compagny = context.Compagnies.Find(id);
             if (compagny == null)
             {
                 return HttpNotFound();
@@ -46,8 +56,8 @@ namespace Doukala.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Compagnies.Add(compagny);
-                db.SaveChanges();
+                context.Compagnies.Add(compagny);
+                context.SaveChanges();
                 return RedirectToAction("Index");
             }
 
@@ -61,7 +71,7 @@ namespace Doukala.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Compagny compagny = db.Compagnies.Find(id);
+            Compagny compagny = context.Compagnies.Find(id);
             if (compagny == null)
             {
                 return HttpNotFound();
@@ -78,8 +88,8 @@ namespace Doukala.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(compagny).State = EntityState.Modified;
-                db.SaveChanges();
+                context.Entry(compagny).State = EntityState.Modified;
+                context.SaveChanges();
                 return RedirectToAction("Index");
             }
             return View(compagny);
@@ -92,7 +102,7 @@ namespace Doukala.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Compagny compagny = db.Compagnies.Find(id);
+            Compagny compagny = context.Compagnies.Find(id);
             if (compagny == null)
             {
                 return HttpNotFound();
@@ -105,9 +115,9 @@ namespace Doukala.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Compagny compagny = db.Compagnies.Find(id);
-            db.Compagnies.Remove(compagny);
-            db.SaveChanges();
+            Compagny compagny = context.Compagnies.Find(id);
+            context.Compagnies.Remove(compagny);
+            context.SaveChanges();
             return RedirectToAction("Index");
         }
 
@@ -115,7 +125,7 @@ namespace Doukala.Controllers
         {
             if (disposing)
             {
-                db.Dispose();
+                context.Dispose();
             }
             base.Dispose(disposing);
         }
