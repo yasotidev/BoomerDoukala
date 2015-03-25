@@ -9,15 +9,69 @@ namespace Doukala.Services
     public class CompagnyService : IDisposable
     {
 
+        #region Members
+
         private readonly DefaultContext _context = new DefaultContext();
 
         protected IDbSet<Compagny> DbSet;
 
+        #endregion
+        
+        #region Methods
+
+        #region Query custom
+
         public virtual IQueryable<Compagny> Query
         {
             get { return DbSet; }
-        }  
-        #region Methods
+        }
+
+        #endregion
+
+        #region GetAll
+
+        public virtual List<Compagny> GetAll()
+        {
+            return _context.Compagnies.ToList();
+        }
+
+        #endregion    
+
+        #region GetById
+
+        public virtual Compagny GetById(int? id)
+        {
+            return _context.Compagnies.Find(id);
+        }
+
+        #endregion  
+               
+        #region Add
+
+        public virtual void Create(Compagny compagny)
+        {
+            _context.Compagnies.Add(compagny);
+        }
+
+        #endregion         
+
+        #region SaveChnages
+
+        public virtual void SaveOrUpdate()
+        {
+            _context.SaveChanges();
+        }
+
+        #endregion       
+
+        #region Remove
+
+        public virtual void Remove(Compagny compagny)
+        {
+            _context.Compagnies.Remove(compagny);
+        }
+
+        #endregion
 
         #region Dispose
 
@@ -33,34 +87,8 @@ namespace Doukala.Services
         {
             _context.Dispose();
         }
-        #endregion
+        #endregion   
 
-
-        #endregion
-
-        public virtual List<Compagny> GetAll()
-        {
-            return _context.Compagnies.ToList();
-        }
-
-        public virtual Compagny GetById(int? id)
-        {
-          return  _context.Compagnies.Find(id);
-        }
-
-        public virtual  void Create(Compagny compagny)
-        {
-            _context.Compagnies.Add(compagny);
-        }
-
-        public virtual void SaveOrUpdate()
-        {
-            _context.SaveChanges();
-        }
-
-        internal static void Remove(Compagny compagny)
-        {
-            throw new NotImplementedException();
-        }
+       #endregion
     }
 }
