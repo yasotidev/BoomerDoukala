@@ -23,6 +23,7 @@ namespace Doukala.Models
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
 
             modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
+            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<DefaultContext>());
         }
     }
 }

@@ -215,6 +215,7 @@
     <Compile Include="Migrations\201503242326223_FirstMigration.Designer.cs">
       <DependentUpon>201503242326223_FirstMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\AppDataSeeder.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\Compagny.cs" />
