@@ -2,26 +2,52 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Linq.Expressions;
 using Doukala.Models;
 
 namespace Doukala.Services
 {
-    public class CompagnyService : IDisposable
+    public interface ICompagnyService : IDisposable
+    {
+        IDataContext DataContext { get; }
+        IQueryable<Compagny> Query { get; }
+        IQueryable<Compagny> GetAll();
+        IQueryable<Compagny> GetAllReadOnly();
+        Compagny GetById(int? id);
+        void Create(Compagny compagny);
+        void SaveOrUpdate();
+        void Remove(Compagny compagny);
+        IEnumerable<Compagny> Find(Expression<Func<Compagny, bool>> expression, int maxHits = 100);
+        long Count();
+        long Count(Expression<Func<Compagny, bool>> expression);
+        void Dispose(bool disposing);
+      }
+
+    public class CompagnyService :  ICompagnyService
     {
 
         #region Members
 
-        private readonly DefaultContext _context = new DefaultContext();
+        protected readonly DefaultContext Context = new DefaultContext();
 
         protected IDbSet<Compagny> DbSet;
 
+        public CompagnyService()
+        {
+            DbSet = Context.Set<Compagny>();
+        }
+
+        public IDataContext DataContext
+        {
+            get { return Context; }
+        } 
         #endregion
         
         #region Methods
 
         #region Query custom
 
-        public virtual IQueryable<Compagny> Query
+        public  IQueryable<Compagny> Query
         {
             get { return DbSet; }
         }
@@ -30,18 +56,28 @@ namespace Doukala.Services
 
         #region GetAll
 
-        public virtual List<Compagny> GetAll()
+        public virtual IQueryable<Compagny> GetAll()
         {
-            return _context.Compagnies.ToList();
+            return Query; //_context.Compagnies.ToList();
         }
 
-        #endregion    
+        #endregion
+
+        #region GetAll ReadOnly
+
+        public virtual IQueryable<Compagny> GetAllReadOnly()
+        {
+            return Query.AsNoTracking(); //Context.Compagnies.AsNoTracking();
+        }
+
+        #endregion
+
 
         #region GetById
 
         public virtual Compagny GetById(int? id)
         {
-            return _context.Compagnies.Find(id);
+            return Query.SingleOrDefault(o => o.Id == id) ;// _context.Compagnies.Find(id);
         }
 
         #endregion  
@@ -50,7 +86,7 @@ namespace Doukala.Services
 
         public virtual void Create(Compagny compagny)
         {
-            _context.Compagnies.Add(compagny);
+            Context.Compagnies.Add(compagny);
         }
 
         #endregion         
@@ -59,7 +95,7 @@ namespace Doukala.Services
 
         public virtual void SaveOrUpdate()
         {
-            _context.SaveChanges();
+            Context.SaveChanges();
         }
 
         #endregion       
@@ -68,10 +104,35 @@ namespace Doukala.Services
 
         public virtual void Remove(Compagny compagny)
         {
-            _context.Compagnies.Remove(compagny);
+            DbSet.Remove(compagny);// _context.Compagnies.Remove(compagny);
         }
 
         #endregion
+
+        #region Find
+
+        public virtual IEnumerable<Compagny> Find(Expression<Func<Compagny, bool>> expression, int maxHits = 100)
+        {
+            return Query.Where(expression).Take(maxHits);
+        }
+
+        #endregion
+
+
+        #region Count
+
+        public long Count()
+        {
+            return DbSet.LongCount();
+        }
+
+        public long Count(Expression<Func<Compagny, bool>> expression)
+        {
+            return expression != null ? DbSet.Where(expression).LongCount() : Count();
+        }
+
+        #endregion
+
 
         #region Dispose
 
@@ -79,13 +140,13 @@ namespace Doukala.Services
         {
             if (disposing)
             {
-                _context.Dispose();
+                Context.Dispose();
             }
             GC.SuppressFinalize(this);
         }
         public void Dispose()
         {
-            _context.Dispose();
+            Context.Dispose();
         }
         #endregion   
 

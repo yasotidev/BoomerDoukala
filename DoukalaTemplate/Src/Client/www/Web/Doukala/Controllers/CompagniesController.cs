@@ -8,15 +8,19 @@ namespace Doukala.Controllers
     public class CompagniesController : Controller
     {
         
-        protected CompagnyService CompagnyService;
+        protected ICompagnyService CompagnyService;
 
         public CompagniesController()
-            :this(new CompagnyService())
+            : this(new CompagnyService())
         {
-            
+
         }
 
-        public CompagniesController(CompagnyService service)
+        //public CompagniesController()
+        //{
+            
+        //}
+        public CompagniesController(ICompagnyService service)
         {
             CompagnyService = service;
         }

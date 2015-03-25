@@ -1,9 +1,22 @@
 ﻿using System.Data.Entity;
+using System.Data.Entity.Core.Objects;
+using System.Data.Entity.Infrastructure;
 using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace Doukala.Models
 {
-    public class DataContext<TContext> : DbContext where TContext : DbContext
+    public interface IDataContext
+    {
+        ObjectContext ObjectContext();
+        IDbSet<T> DbSet<T>() where T : DomaineObject;
+        DbEntityEntry Entry<T>(T entity) where T : DomaineObject;
+        void Dispose();
+
+
+       
+    }
+
+    public class DataContext<TContext> : DbContext, IDataContext where TContext : DbContext
     {
         static DataContext()
         {
@@ -16,6 +29,11 @@ namespace Doukala.Models
             Configuration.ProxyCreationEnabled = proxyCreation;
         }
 
+        public ObjectContext ObjectContext()
+        {
+            return (this as IObjectContextAdapter).ObjectContext;
+        }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -24,6 +42,17 @@ namespace Doukala.Models
 
             modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
             Database.SetInitializer(new DropCreateDatabaseIfModelChanges<DefaultContext>());
+        }
+
+
+        public virtual IDbSet<T> DbSet<T>() where T : DomaineObject
+        {
+            return Set<T>();
+        }
+
+        public new DbEntityEntry Entry<T>(T entity) where T : DomaineObject
+        {
+            return base.Entry(entity);
         }
     }
 }
