@@ -1,4 +1,4 @@
-﻿
+﻿@model Doukala.ViewModels.ManagerViewModel
 @{
     ViewBag.Title = "About";
 }
@@ -8,6 +8,12 @@
 <div class="row">
     <div class="col-lg-12">
        
+    </div>
+</div>  
+
+<div class="row">
+    <div class="col-lg-pull-12">
+         @Html.DisplayFor(_ => Model.FullName)
     </div>
 </div>
 

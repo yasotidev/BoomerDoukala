@@ -42,7 +42,10 @@ namespace Doukala.Controllers
         // GET: Compagnies
         public ActionResult Index()
         {
-            return View(CompagnyService.GetAll());
+            var compagnies = CompagnyService
+                .GetAll();//.AsEnumerable();
+
+           return View(compagnies);
         }
 
         #endregion
@@ -60,6 +63,30 @@ namespace Doukala.Controllers
 
 
             Compagny compagny = CompagnyService.GetById(id);
+
+            
+            var model = new CompagnyViewModel
+            {
+                Logo = compagny.Logo,
+                Nom = compagny.Nom,
+                Activity = compagny.Activity,
+                CodeNaf = compagny.CodeNaf,
+                Description = compagny.Description,
+                IntraCommunityVat = compagny.IntraCommunityVat,
+                Email = compagny.Email,
+                WebSite = compagny.WebSite,
+                Address = new AddressViewModel
+                {
+                    Street = compagny.Address.Street,
+                    Option = compagny.Address.Option,
+                    ZipCode = compagny.Address.ZipCode,
+                    City = compagny.Address.City,
+                    State = compagny.Address.State,
+                    Country = compagny.Address.Country,
+                }   
+
+
+            };
             if (compagny == null)
             {
                 return HttpNotFound();
@@ -191,6 +218,8 @@ namespace Doukala.Controllers
 
 
         #endregion
+
+         
 
 
     }

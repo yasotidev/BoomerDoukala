@@ -229,7 +229,13 @@
     <Compile Include="Services\CompagnyService.cs" />
     <Compile Include="Services\ICompagnyService.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\AddressViewModel.cs" />
     <Compile Include="ViewModels\CompagnySearchViewModel.cs" />
+    <Compile Include="ViewModels\CompagnyViewModel.cs" />
+    <Compile Include="ViewModels\DashboardViewModel.cs" />
+    <Compile Include="ViewModels\GenderViewModel.cs" />
+    <Compile Include="ViewModels\ManageCompagnyViewModel.cs" />
+    <Compile Include="ViewModels\ManagerViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
@@ -247,7 +253,9 @@
     <Content Include="Assets\css\themes\fonts\awesome\fontawesome-webfont.svg" />
     <Content Include="Assets\Images\jpg\Grainy.jpg" />
     <Content Include="Assets\js\bootstrap\bootstrap.js" />
+    <None Include="Assets\js\jquery\jquery-2.1.3.intellisense.js" />
     <Content Include="Assets\js\jquery\jquery-2.1.3.js" />
+    <Content Include="Assets\js\jquery\jquery-2.1.3.min.js" />
     <Content Include="Assets\js\modernizr\modernizr-2.8.3.js" />
     <Content Include="Assets\js\respond\respond.js" />
     <Content Include="Assets\js\respond\respond.matchmedia.addListener.js" />
@@ -301,6 +309,7 @@
     <Content Include="Assets\css\themes\fonts\awesome\fontawesome-webfont.woff" />
     <Content Include="Assets\css\themes\fonts\awesome\fontawesome-webfont.woff2" />
     <Content Include="Assets\css\themes\fonts\awesome\FontAwesome.otf" />
+    <Content Include="Assets\js\jquery\jquery-2.1.3.min.map" />
     <None Include="Scripts\jquery-2.1.3.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -338,8 +347,9 @@
     <Content Include="Views\Compagnies\Delete.cshtml" />
     <Content Include="Views\Compagnies\Details.cshtml" />
     <Content Include="Views\Compagnies\Edit.cshtml" />
-    <Content Include="Views\Compagnies\Index.cshtml" />
     <Content Include="Views\Compagnies\Search.cshtml" />
+    <Content Include="Views\Compagnies\_CreateOrEdit.cshtml" />
+    <Content Include="Views\Compagnies\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
