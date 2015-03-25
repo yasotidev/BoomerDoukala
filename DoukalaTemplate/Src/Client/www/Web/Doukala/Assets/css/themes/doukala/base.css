@@ -1,7 +1,39 @@
 ﻿body {
+
+    background: url("/Assets/Images/jpg/Grainy.jpg");
+    margin: 0;
+  font-family: "wf_SegoeUI", "Segoe UI", "Segoe", "Segoe WP", "Tahoma", "Verdana", "Arial", "sans-serif";
+  font-size: 14px;
+  background-color: #ededed;
 }
-  .doukala { }
 
-        .logo-brand { }
+html, body {
+            font-family: 'Segoe UI','Frutiger','Helvetica Neue','Helvetica,Arial,sans-serif';
+            font-size: 16px;
+            font-weight: normal;
+        }
+ 
+ .doukala { }
+  .logo-brand { }
+  .doukala-header { }
 
-        .doukala-header { }
+    html {
+            background: #D0D6D4;
+        }
+
+        /*html,
+        body,
+        .labelStyle {
+            color: #444444;
+        }*/
+
+a {
+    text-decoration: none;
+}
+
+a:active {
+  background-color: transparent;
+}
+button {
+  font-family: "wf_SegoeUI", "Segoe UI", "Segoe", "Segoe WP", "Tahoma", "Verdana", "Arial", "sans-serif";
+}

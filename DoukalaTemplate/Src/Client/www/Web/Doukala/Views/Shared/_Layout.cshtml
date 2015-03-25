@@ -13,9 +13,10 @@
     @Styles.Render("~/Assets/app")
 </head>
 <body>
-    <div class="doukala">
+    <div class="doukala container">
         <header class="navbar doukala-header">
             <div class="container">
+                <div class="row"></div>    
                 <a class="navbar-brand logo-brand" href="@Url.Action("Index", "Home")">
                     <img src="" alt="" />
                     <img src="" alt="" />
@@ -49,7 +50,7 @@
                 </div>
             </div>
         </header>
-        <div class="container">
+        <div id="content" class="main container">
             @RenderBody()
         </div>
         <div class="container">

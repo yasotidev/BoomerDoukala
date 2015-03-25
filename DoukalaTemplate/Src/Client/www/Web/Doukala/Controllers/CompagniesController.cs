@@ -2,6 +2,7 @@
 using System.Web.Mvc;
 using Doukala.Server.Core.Entities;
 using Doukala.Services;
+using Doukala.ViewModels;
 
 namespace Doukala.Controllers
 {
@@ -182,7 +183,8 @@ namespace Doukala.Controllers
 
         public ActionResult Search()
         {
-            return View();
+            var model = new CompagnySearchViewModel();
+            return View(model);
         }
 
         #endregion

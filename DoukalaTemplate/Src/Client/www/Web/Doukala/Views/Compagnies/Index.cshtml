@@ -14,51 +14,38 @@
 
 @foreach (var item in Model) {
     <tr>
-        <td>
+        @*<td>
             @Html.DisplayFor(modelItem => item.LogoAvatar)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Logo)
-        </td>
+        </td>*@
         <td>
             @Html.DisplayFor(modelItem => item.Nom)
-        </td>
-        <td>
+            @Html.DisplayFor(modelItem => item.Manager)
+            @Html.DisplayFor(modelItem => item.SiretNumber)
             @Html.DisplayFor(modelItem => item.Description)
         </td>
+        
         <td>
             @Html.DisplayFor(modelItem => item.Address)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Activity)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.CodeNaf)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SiretNumber)
-        </td>
+        
+        
         <td>
             @Html.DisplayFor(modelItem => item.IntraCommunityVat)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Email)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.WebSite)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Manager)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CreatedDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ModifiedDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.RowVersion)
-        </td>
+        
+      
+       
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
             @Html.ActionLink("Details", "Details", new { id=item.Id }) |
